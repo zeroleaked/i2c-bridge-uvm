@@ -1,7 +1,7 @@
-`ifndef I2C_MASTER_AXIL_PKG
-`define I2C_MASTER_AXIL_PKG
+`ifndef AXIL_SEQ_LIST
+`define AXIL_SEQ_LIST
 
-package i2c_master_axil_pkg;
+package axil_seq_list;
    
    import uvm_pkg::*;
    `include "uvm_macros.svh"
@@ -10,10 +10,12 @@ package i2c_master_axil_pkg;
    // importing packages : agent,ref model, register ...
    /////////////////////////////////////////////////////////
 	import dut_params_pkg::*;
+	import axil_env_pkg::*;
+	import i2c_master_axil_pkg::i2c_reg_map;
    //////////////////////////////////////////////////////////
    // include top env files 
    /////////////////////////////////////////////////////////
-  `include "i2c_reg_map.sv"
+  `include "api_single_rw_seq.sv"
 
 endpackage
 

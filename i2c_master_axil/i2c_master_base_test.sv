@@ -16,7 +16,7 @@ class i2c_master_base_test extends uvm_test;
         i2c_config_seq config_seq;
         
         phase.raise_objection(this);
-        
+
         config_seq = i2c_config_seq::type_id::create("config_seq");
         config_seq.start(env.axil_seqr);
         

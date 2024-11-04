@@ -16,6 +16,8 @@ class i2c_master_test extends i2c_master_base_test;
         config_seq.start(env.axil_seqr);
         
         #1000;
+        if (env.axil_seqr == null)
+        `uvm_fatal("test", "seqr null");
         
         wr_seq = i2c_write_read_seq::type_id::create("wr_seq");
         `uvm_info("TEST", "Starting write/read sequence", UVM_LOW)
