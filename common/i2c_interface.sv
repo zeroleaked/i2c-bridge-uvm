@@ -1,7 +1,7 @@
 `ifndef I2C_INTERFACE
 `define I2C_INTERFACE
 
-interface i2c_interface();
+interface i2c_interface(input logic clk);
 logic        i2c_scl_i;
 logic        i2c_scl_o;
 logic        i2c_scl_t;
@@ -18,6 +18,7 @@ logic        resp_sda_o;
  */
 // master agent driver
 modport driver(
+	input			clk,
     input           i2c_scl_i,
     input           i2c_scl_o,
     input           i2c_scl_t,
@@ -27,6 +28,7 @@ modport driver(
 );
 // slave agent driver
 modport driver_slave(
+	input			clk,
     output          i2c_scl_i,
     input           i2c_scl_o,
     input           i2c_scl_t,
@@ -38,6 +40,7 @@ modport driver_slave(
 );
 // monitor
 modport monitor(
+	input			clk,
     input           i2c_scl_i,
     input           i2c_scl_o,
     input           i2c_scl_t,

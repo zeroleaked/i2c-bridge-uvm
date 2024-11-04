@@ -16,8 +16,12 @@ class read_driver_slave extends uvm_driver#(read_sequence_item);
 
     // set driver-DUT interface
     virtual top_interface.driver_slave top_vinterface;
+    virtual i2c_interface.driver_slave vif;
     function void build_phase (uvm_phase phase);
         if (!uvm_config_db #(virtual top_interface)::get(this, "", "top_vinterface", top_vinterface)) begin
+            `uvm_error("", "uvm_config_db::driver_slave.svh get failed on BUILD_PHASE")
+        end
+        if (!uvm_config_db #(virtual i2c_interface)::get(this, "", "i2c_vinterface", vif)) begin
             `uvm_error("", "uvm_config_db::driver_slave.svh get failed on BUILD_PHASE")
         end
     endfunction
@@ -108,14 +112,14 @@ class read_driver_slave extends uvm_driver#(read_sequence_item);
             this.data = 0;                              // data packet (8 bits)
             this.packet = PACKET_ACK;                            // ack/nack variable (redundant, remove later)
             this.flip = (resp_state == RESP_READ);      // master/slave operation based on the state
-            this.top_vinterface.resp_sda_o = 1 ^ flip;
+            this.vif.resp_sda_o = 1 ^ flip;
 
             fork
                 // THREAD 1 :: check for start bit
                 begin
                     forever begin
-                        @(negedge this.top_vinterface.i2c_sda_i);
-                        if (this.top_vinterface.i2c_scl_i == 1'b1) begin
+                        @(negedge this.vif.i2c_sda_i);
+                        if (this.vif.i2c_scl_i == 1'b1) begin
                             this.start = 1;
                         end
                     end
@@ -124,8 +128,8 @@ class read_driver_slave extends uvm_driver#(read_sequence_item);
                 begin
                     // THREAD 2 :: check for stop bit
                     forever begin
-                        @(posedge this.top_vinterface.i2c_sda_i);
-                        if (this.top_vinterface.i2c_scl_i == 1'b1) begin
+                        @(posedge this.vif.i2c_sda_i);
+                        if (this.vif.i2c_scl_i == 1'b1) begin
                             this.stop = 1;
                             break;
                         end
@@ -135,19 +139,19 @@ class read_driver_slave extends uvm_driver#(read_sequence_item);
                 // THREAD 3 :: retrieve data
                 begin
                     for(i=0; i<8+(this.start && resp_state!=RESP_IDLE); i=i+1) begin
-                        @(posedge this.top_vinterface.i2c_scl_i);
-                        this.data = (this.data << 1) | this.top_vinterface.i2c_sda_i;
+                        @(posedge this.vif.i2c_scl_i);
+                        this.data = (this.data << 1) | this.vif.i2c_sda_i;
                     end
                     // set ack bit
-                    @(negedge this.top_vinterface.i2c_scl_i);
+                    @(negedge this.vif.i2c_scl_i);
                     #5;
-                    top_vinterface.resp_sda_o = 0 ^ flip;
+                    vif.resp_sda_o = 0 ^ flip;
                     // read ack bit
-                    @(posedge this.top_vinterface.i2c_scl_i);
+                    @(posedge this.vif.i2c_scl_i);
                     #5;
-                    this.ack = ~this.top_vinterface.i2c_sda_i;
+                    this.ack = ~this.vif.i2c_sda_i;
                     // wait until transfer finish
-                    @(negedge this.top_vinterface.i2c_scl_i);
+                    @(negedge this.vif.i2c_scl_i);
                     // making sure no race condition is happening
                     #5;
                 end
@@ -159,13 +163,6 @@ class read_driver_slave extends uvm_driver#(read_sequence_item);
 
     // define driver behavior
     task run_phase (uvm_phase phase);
-
-        // do reset
-        top_vinterface.rst = 1;
-        @top_vinterface.clk;
-        top_vinterface.rst = 0; 
-        @top_vinterface.clk;
-
         forever begin
             // read packet
             read_packet;

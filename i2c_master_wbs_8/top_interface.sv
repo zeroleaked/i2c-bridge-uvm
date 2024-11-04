@@ -44,15 +44,7 @@ modport driver(
     output          wbs_we_i, 
     output          wbs_stb_i,
     input           wbs_ack_o,
-    output          wbs_cyc_i,
-
-    // I2C interface
-    input           i2c_scl_i,
-    input           i2c_scl_o,
-    input           i2c_scl_t,
-    input           i2c_sda_i,
-    input           i2c_sda_o,
-    input           i2c_sda_t
+    output          wbs_cyc_i
 );
 // slave agent driver
 modport driver_slave(
@@ -67,17 +59,7 @@ modport driver_slave(
     input          wbs_we_i, 
     input          wbs_stb_i,
     input           wbs_ack_o,
-    input          wbs_cyc_i,
-
-    // I2C interface
-    output          i2c_scl_i,
-    input           i2c_scl_o,
-    input           i2c_scl_t,
-    output          i2c_sda_i,
-    input           i2c_sda_o,
-    input           i2c_sda_t,
-
-    output          resp_sda_o
+    input          wbs_cyc_i
 );
 // monitor
 modport monitor(
@@ -92,15 +74,7 @@ modport monitor(
     input           wbs_we_i, 
     input           wbs_stb_i,
     input           wbs_ack_o,
-    input           wbs_cyc_i,
-
-    // I2C interface
-    input           i2c_scl_i,
-    input           i2c_scl_o,
-    input           i2c_scl_t,
-    input           i2c_sda_i,
-    input           i2c_sda_o,
-    input           i2c_sda_t
+    input           wbs_cyc_i
 );
 endinterface
 

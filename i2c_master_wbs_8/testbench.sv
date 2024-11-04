@@ -4,7 +4,7 @@ module read_testbench;
   
   // Instantiate the interface
   top_interface top_if();
-  i2c_interface i2c_if();
+  i2c_interface i2c_if(top_if.clk);
   
   // Instantiate the DUT and connect it to the interface
   i2c_master_wbs_8 DUT(
@@ -22,12 +22,12 @@ module read_testbench;
     .wbs_cyc_i(top_if.wbs_cyc_i),
 
     // I2C interface
-    .i2c_scl_i(scl_i),
-    .i2c_scl_o(dut_scl_o),
-    .i2c_scl_t(top_if.i2c_scl_t),
-    .i2c_sda_i(sda_i),
-    .i2c_sda_o(dut_sda_o),
-    .i2c_sda_t(top_if.i2c_sda_t)
+    .i2c_scl_i(i2c_if.i2c_scl_i),
+    .i2c_scl_o(i2c_if.i2c_scl_o),
+    .i2c_scl_t(i2c_if.i2c_scl_t),
+    .i2c_sda_i(i2c_if.i2c_sda_i),
+    .i2c_sda_o(i2c_if.i2c_sda_o),
+    .i2c_sda_t(i2c_if.i2c_sda_t)
   );
 
   // Clock and reset control
@@ -42,6 +42,7 @@ module read_testbench;
   initial begin
     // Place the interface into the UVM configuration database
     uvm_config_db#(virtual top_interface)::set(null, "*", "top_vinterface", top_if);
+    uvm_config_db#(virtual i2c_interface)::set(null, "*", "i2c_vinterface", i2c_if);
     // Start the test
     run_test("read_test");
   end
