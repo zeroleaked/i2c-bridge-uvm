@@ -2,6 +2,7 @@ module tb_top;
 	import uvm_pkg::*;
     import dut_params_pkg::*;
 	import axil_test_pkg::*;
+	import axil_env_pkg::*;
     
     reg clk;
     reg rst;

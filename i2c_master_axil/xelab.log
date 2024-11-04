@@ -25,8 +25,11 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling package uvm.uvm_pkg
 Compiling package std.std
-Compiling package work.i2c_master_axil_pkg
+Compiling package work.axil_env_pkg
+Compiling package work.axil_test_pkg
 Compiling package work.dut_params_pkg
+Compiling package work.axil_seq_list
+Compiling package work.i2c_master_axil_pkg
 Compiling module work.monitor_cb
 Compiling module work.i2c_if_default
 Compiling module work.driver_cb

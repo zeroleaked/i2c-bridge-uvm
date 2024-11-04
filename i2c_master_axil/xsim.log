@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Mon Nov  4 22:05:19 2024
-# Process ID: 251874
+# Start of session at: Mon Nov  4 23:30:58 2024
+# Process ID: 266547
 # Current directory: /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil
 # Command line: xsim -mode tcl -source {xsim.dir/tb_top/xsim_script.tcl}
 # Log file: /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/xsim.log
@@ -19,7 +19,7 @@
 # Host memory       :33575 MB
 # Swap memory       :21474 MB
 # Total Virtual     :55050 MB
-# Available Virtual :42945 MB
+# Available Virtual :42209 MB
 #-----------------------------------------------------------
 source xsim.dir/tb_top/xsim_script.tcl
 # xsim {tb_top} -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
@@ -50,60 +50,242 @@ UVM_INFO i2c_master_env.sv(35) @ 0: uvm_test_top.env [ENV] All connections compl
 UVM_INFO /media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
 UVM_INFO i2c_master_test.sv(15) @ 0: uvm_test_top [TEST] Starting config sequence
 UVM_INFO i2c_monitor.sv(74) @ 0: uvm_test_top.env.i2c_mon [I2C_MON] Waiting for I2C transaction...
-UVM_INFO i2c_master_test.sv(21) @ 1125000: uvm_test_top [TEST] Starting write/read sequence
-UVM_INFO i2c_write_read_seq.sv(13) @ 1125000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Starting I2C write/read sequence
-UVM_INFO i2c_write_read_seq.sv(21) @ 1125000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Sending I2C write command: addr=50 data=a5
-UVM_INFO axil_monitor.sv(41) @ 1165000: uvm_test_top.env.axil_mon [AXIL_MON] Collected write transaction: addr=c data=00000550
-UVM_INFO i2c_master_scoreboard.sv(21) @ 1165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=c data=00000550 read=0
+UVM_INFO i2c_master_test.sv(23) @ 1125000: uvm_test_top [TEST] Starting write/read sequence
+UVM_INFO i2c_write_read_seq.sv(16) @ 1125000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Starting I2C write/read sequence
+UVM_INFO axil_monitor.sv(41) @ 1165000: uvm_test_top.env.axil_mon [AXIL_MON] Collected write transaction: addr=c data=00001550
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=c data=00001550 read=0
 UVM_INFO i2c_master_scoreboard.sv(21) @ 1165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO i2c_write_read_seq.sv(29) @ 1165000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Sending I2C write command: addr=50 data=a5
 UVM_INFO i2c_responder.sv(21) @ 1185000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
 UVM_INFO i2c_monitor.sv(37) @ 1195000: uvm_test_top.env.i2c_mon [I2C_MON] START condition detected at time 1195000
-UVM_INFO i2c_write_read_seq.sv(38) @ 1245000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004101
+UVM_INFO i2c_write_read_seq.sv(20) @ 1205000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Sending I2C write command: addr=50 data=a5
+UVM_INFO i2c_write_read_seq.sv(24) @ 1245000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004101
+UVM_INFO axil_monitor.sv(55) @ 1285000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1285000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1285000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1285000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 1325000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1325000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
 UVM_INFO i2c_responder.sv(21) @ 1350000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO axil_monitor.sv(55) @ 1365000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1365000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 1405000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1405000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1405000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1405000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 1445000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1445000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1445000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1445000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 1485000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1485000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1485000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1485000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 1525000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1525000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
 UVM_INFO i2c_responder.sv(21) @ 1525000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1525000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1525000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 1565000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1565000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1565000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1565000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 1605000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1605000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1605000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1605000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 1645000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1645000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1645000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1645000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
 UVM_INFO i2c_responder.sv(21) @ 1650000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO axil_monitor.sv(55) @ 1685000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1685000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 1725000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1725000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1725000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1725000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 1765000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1765000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1765000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1765000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 1805000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1805000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1805000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1805000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
 UVM_INFO i2c_responder.sv(21) @ 1810000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO axil_monitor.sv(55) @ 1845000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1845000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1845000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1845000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 1885000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1885000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1885000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1885000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 1925000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1925000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1925000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1925000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
 UVM_INFO i2c_monitor.sv(90) @ 1935000: uvm_test_top.env.i2c_mon [I2C_MON] Address byte=0x50, ACK=0 at time 1935000
+UVM_INFO axil_monitor.sv(55) @ 1965000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1965000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 1965000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 1965000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 2005000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2005000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2005000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2005000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 2045000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2045000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2045000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2045000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 2085000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2085000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2085000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2085000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
+UVM_INFO axil_monitor.sv(55) @ 2125000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2125000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2125000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2125000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2165000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2165000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
 UVM_INFO i2c_responder.sv(21) @ 2185000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO axil_monitor.sv(55) @ 2205000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2205000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2205000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2205000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2245000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2245000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2245000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2245000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2285000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2285000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2285000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2285000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2325000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2325000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2365000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
 UVM_INFO i2c_responder.sv(21) @ 2365000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2365000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2405000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2405000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2405000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2405000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2445000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2445000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2445000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2445000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2485000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2485000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2485000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2485000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
 UVM_INFO i2c_responder.sv(21) @ 2490000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO axil_monitor.sv(55) @ 2525000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2525000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2525000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2525000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2565000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2565000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2565000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2565000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2605000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2605000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2605000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2605000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2645000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2645000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2645000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2645000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
 UVM_INFO i2c_responder.sv(21) @ 2650000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO axil_monitor.sv(55) @ 2685000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2685000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2725000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2725000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2725000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2725000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2765000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2765000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2765000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2765000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
 UVM_INFO i2c_monitor.sv(121) @ 2775000: uvm_test_top.env.i2c_mon [I2C_MON] Write data=0xd2, ACK=1 at time 2775000
 UVM_ERROR i2c_master_scoreboard.sv(64) @ 2775000: uvm_test_top.env.scbd [SCBD] Unexpected I2C transaction received: addr=28 read=0 data=d2
 UVM_INFO i2c_monitor.sv(74) @ 2775000: uvm_test_top.env.i2c_mon [I2C_MON] Waiting for I2C transaction...
-UVM_INFO i2c_write_read_seq.sv(49) @ 6245000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Sending I2C read command: addr=50
-UVM_INFO axil_monitor.sv(41) @ 6285000: uvm_test_top.env.axil_mon [AXIL_MON] Collected write transaction: addr=0 data=0000a100
-UVM_INFO i2c_master_scoreboard.sv(21) @ 6285000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=0000a100 read=1
-UVM_INFO i2c_master_scoreboard.sv(21) @ 6285000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO axil_monitor.sv(55) @ 6325000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004802
-UVM_INFO i2c_master_scoreboard.sv(21) @ 6325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004802 read=1
-UVM_INFO i2c_master_scoreboard.sv(21) @ 6325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO i2c_write_read_seq.sv(58) @ 6325000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status after read: 00004802
-UVM_INFO /media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 16325000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO i2c_master_scoreboard.sv(38) @ 16325000: uvm_test_top.env.scbd [SCBD] Total AXI transactions: 6
-UVM_INFO i2c_master_scoreboard.sv(40) @ 16325000: uvm_test_top.env.scbd [SCBD] Remaining expected I2C transactions: 0
-UVM_INFO /media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 16325000: reporter [UVM/REPORT/SERVER] 
+UVM_INFO axil_monitor.sv(55) @ 2805000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2805000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2805000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2805000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2845000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2845000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2845000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2845000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2885000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2885000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2885000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2885000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO i2c_responder.sv(21) @ 2915000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO axil_monitor.sv(55) @ 2925000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2925000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2925000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2925000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 2965000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2965000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 2965000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 2965000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO axil_monitor.sv(55) @ 3005000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004900
+UVM_INFO i2c_master_scoreboard.sv(21) @ 3005000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004900 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 3005000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(24) @ 3005000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004900
+UVM_INFO i2c_write_read_seq.sv(30) @ 8045000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Sending I2C read command: addr=50
+UVM_INFO i2c_responder.sv(21) @ 8065000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO i2c_monitor.sv(37) @ 8075000: uvm_test_top.env.i2c_mon [I2C_MON] START condition detected at time 8075000
+UVM_INFO axil_monitor.sv(55) @ 8085000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004800
+UVM_INFO i2c_master_scoreboard.sv(21) @ 8085000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004800 read=1
+UVM_INFO i2c_master_scoreboard.sv(21) @ 8085000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO i2c_write_read_seq.sv(34) @ 8085000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status after read: 00004800
+UVM_INFO i2c_responder.sv(21) @ 8230000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO i2c_responder.sv(21) @ 8405000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO i2c_responder.sv(21) @ 8530000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO i2c_responder.sv(21) @ 8690000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO i2c_monitor.sv(90) @ 8815000: uvm_test_top.env.i2c_mon [I2C_MON] Address byte=0x50, ACK=1 at time 8815000
+UVM_INFO i2c_monitor.sv(74) @ 8815000: uvm_test_top.env.i2c_mon [I2C_MON] Waiting for I2C transaction...
+UVM_INFO i2c_responder.sv(21) @ 9855000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO /media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 18085000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO i2c_master_scoreboard.sv(38) @ 18085000: uvm_test_top.env.scbd [SCBD] Total AXI transactions: 92
+UVM_INFO i2c_master_scoreboard.sv(40) @ 18085000: uvm_test_top.env.scbd [SCBD] Remaining expected I2C transactions: 0
+UVM_INFO /media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 18085000: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   38
+UVM_INFO :  220
 UVM_WARNING :    0
 UVM_ERROR :    1
 UVM_FATAL :    0
 ** Report counts by id
-[AXIL_MON]     3
+[AXIL_MON]    46
 [ENV]     1
-[I2C_MON]     5
-[I2C_RESP]     9
+[I2C_MON]     8
+[I2C_RESP]    16
 [RNTST]     1
-[SCBD]     9
-[SEQ]     6
+[SCBD]    95
+[SEQ]    49
 [TEST]     2
 [TEST_DONE]     1
 [UVM/COMP/NAMECHECK]     1
 [UVM/RELNOTES]     1
 
-$finish called at time : 16325 ns : File "/media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+$finish called at time : 18085 ns : File "/media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
 exit
-INFO: [Common 17-206] Exiting xsim at Mon Nov  4 22:05:21 2024...
+INFO: [Common 17-206] Exiting xsim at Mon Nov  4 23:31:00 2024...
