@@ -15,12 +15,8 @@ class read_driver_slave extends uvm_driver#(read_sequence_item);
     endfunction
 
     // set driver-DUT interface
-    virtual top_interface.driver_slave top_vinterface;
     virtual i2c_interface.driver_slave vif;
     function void build_phase (uvm_phase phase);
-        if (!uvm_config_db #(virtual top_interface)::get(this, "", "top_vinterface", top_vinterface)) begin
-            `uvm_error("", "uvm_config_db::driver_slave.svh get failed on BUILD_PHASE")
-        end
         if (!uvm_config_db #(virtual i2c_interface)::get(this, "", "i2c_vinterface", vif)) begin
             `uvm_error("", "uvm_config_db::driver_slave.svh get failed on BUILD_PHASE")
         end
