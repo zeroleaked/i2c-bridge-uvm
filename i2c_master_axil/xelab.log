@@ -1,0 +1,40 @@
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /media/flyinglobster/wd/vivado/Vivado/2024.1/bin/unwrapped/lnx64.o/xelab -L uvm -timescale 1ns/1ps -debug typical tb_top -s tb_top 
+Multi-threading is on. Using 10 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 's_axis_tkeep' [/home/flyinglobster/i2c-bridge-uvm/rtl/i2c_master_axil.v:389]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 's_axis_tid' [/home/flyinglobster/i2c-bridge-uvm/rtl/i2c_master_axil.v:393]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 's_axis_tdest' [/home/flyinglobster/i2c-bridge-uvm/rtl/i2c_master_axil.v:394]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 's_axis_tkeep' [/home/flyinglobster/i2c-bridge-uvm/rtl/i2c_master_axil.v:433]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 's_axis_tid' [/home/flyinglobster/i2c-bridge-uvm/rtl/i2c_master_axil.v:437]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 's_axis_tdest' [/home/flyinglobster/i2c-bridge-uvm/rtl/i2c_master_axil.v:438]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 's_axis_tkeep' [/home/flyinglobster/i2c-bridge-uvm/rtl/i2c_master_axil.v:473]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 's_axis_tid' [/home/flyinglobster/i2c-bridge-uvm/rtl/i2c_master_axil.v:477]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 's_axis_tdest' [/home/flyinglobster/i2c-bridge-uvm/rtl/i2c_master_axil.v:478]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 's_axis_tuser' [/home/flyinglobster/i2c-bridge-uvm/rtl/i2c_master_axil.v:479]
+WARNING: [VRFC 10-3645] port 'status_overflow' remains unconnected for this instance [/home/flyinglobster/i2c-bridge-uvm/rtl/i2c_master_axil.v:374]
+WARNING: [VRFC 10-3645] port 'status_overflow' remains unconnected for this instance [/home/flyinglobster/i2c-bridge-uvm/rtl/i2c_master_axil.v:418]
+WARNING: [VRFC 10-3645] port 'status_overflow' remains unconnected for this instance [/home/flyinglobster/i2c-bridge-uvm/rtl/i2c_master_axil.v:458]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4468] File : /proj/xbuilds/SWIP/2024.1_0404_1523/installs/lin64/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv, Line : 25994, RANDC variable size more than 8 bits. This will be treated as a RAND variable instead.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling package work.i2c_master_axil_pkg
+Compiling package work.dut_params_pkg
+Compiling module work.monitor_cb
+Compiling module work.i2c_if_default
+Compiling module work.driver_cb
+Compiling module work.monitor_cb
+Compiling module work.axil_if_default
+Compiling module work.axis_fifo(DEPTH=32,DATA_WIDTH=12...
+Compiling module work.axis_fifo(DEPTH=32,KEEP_ENABLE=0...
+Compiling module work.i2c_master
+Compiling module work.i2c_master_axil_default
+Compiling module work.tb_top
+Built simulation snapshot tb_top
