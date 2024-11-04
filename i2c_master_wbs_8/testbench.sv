@@ -1,12 +1,10 @@
-`include "uvm_macros.svh"
-`include "packages.svh"
-
 module read_testbench;
   import uvm_pkg::*;
-  import packages::*;
+  import i2c_master_wbs_8_pkg::*;
   
   // Instantiate the interface
   top_interface top_if();
+  i2c_interface i2c_if();
   
   // Instantiate the DUT and connect it to the interface
   i2c_master_wbs_8 DUT(

@@ -1,5 +1,7 @@
-package packages;
+package i2c_master_wbs_8_pkg;
     import uvm_pkg::*;
+
+	import i2c_common_pkg::*;
 
     // `include "sequence.svh"
     // `include "driver.svh"
