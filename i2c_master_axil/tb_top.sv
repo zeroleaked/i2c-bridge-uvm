@@ -19,7 +19,19 @@ module tb_top;
     
     i2c_if  i2c_vif(clk, rst);
     axil_if axil_vif(clk, rst);
-    
+
+	// copied this from the documentation
+	assign scl_dut_i = scl_dut_o & scl_tb_o;
+	assign scl_tb_i = scl_dut_o & scl_tb_o;
+	assign sda_dut_i = sda_dut_o & sda_tb_o;
+	assign sda_tb_i = sda_dut_o & sda_tb_o;
+
+	// vif is still using the perspective of DUT, so everything is the opposite (see interface modport)
+	assign scl_tb_o = i2c_vif.scl_i; 
+	assign sda_tb_o = i2c_vif.sda_i;
+	assign i2c_vif.scl_o = scl_tb_i;
+	assign i2c_vif.sda_o = sda_tb_i;
+
     i2c_master_axil #(
         .DEFAULT_PRESCALE(DEFAULT_PRESCALE),
         .FIXED_PRESCALE(FIXED_PRESCALE),
@@ -51,11 +63,11 @@ module tb_top;
         .s_axil_rresp(axil_vif.rresp),
         .s_axil_rvalid(axil_vif.rvalid),
         .s_axil_rready(axil_vif.rready),
-        .i2c_scl_i(i2c_vif.scl_i),
-        .i2c_scl_o(i2c_vif.scl_o),
+        .i2c_scl_i(scl_dut_i),
+        .i2c_scl_o(scl_dut_o),
         .i2c_scl_t(i2c_vif.scl_t),
-        .i2c_sda_i(i2c_vif.sda_i),
-        .i2c_sda_o(i2c_vif.sda_o),
+        .i2c_sda_i(sda_dut_i),
+        .i2c_sda_o(sda_dut_o),
         .i2c_sda_t(i2c_vif.sda_t)
     );
 
