@@ -1,2 +1,2 @@
-  CREATE_STREAM @0 {NAME:config_seq T:Transactions SCOPE:uvm_test_top.env.axil_seqr STREAM:649}
-  CREATE_STREAM @1125000 {NAME:wr_seq T:Transactions SCOPE:uvm_test_top.env.axil_seqr STREAM:702}
+  CREATE_STREAM @0 {NAME:config_seq T:Transactions SCOPE:uvm_test_top.env.axil_seqr STREAM:660}
+  CREATE_STREAM @1125000 {NAME:wr_seq T:Transactions SCOPE:uvm_test_top.env.axil_seqr STREAM:713}

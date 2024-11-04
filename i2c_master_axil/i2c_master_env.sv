@@ -5,6 +5,8 @@ class i2c_master_env extends uvm_env;
     uvm_sequencer #(axil_seq_item) axil_seqr;
     i2c_master_scoreboard scbd;
     i2c_master_coverage cov;
+
+    i2c_responder i2c_resp;
     
     `uvm_component_utils(i2c_master_env)
     
@@ -20,6 +22,8 @@ class i2c_master_env extends uvm_env;
         axil_seqr = uvm_sequencer#(axil_seq_item)::type_id::create("axil_seqr", this);
         scbd = i2c_master_scoreboard::type_id::create("scbd", this);
         cov = i2c_master_coverage::type_id::create("cov", this);
+
+        i2c_resp = i2c_responder::type_id::create("i2c_resp", this);  
     endfunction
     
 function void connect_phase(uvm_phase phase);

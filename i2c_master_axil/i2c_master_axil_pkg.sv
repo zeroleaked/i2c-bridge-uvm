@@ -21,6 +21,7 @@ package i2c_master_axil_pkg;
   
   `include "i2c_trans.sv"
   `include "i2c_monitor.sv"
+  `include "i2c_responder.sv"
   
   `include "i2c_master_scoreboard.sv"
   `include "i2c_master_coverage.sv"

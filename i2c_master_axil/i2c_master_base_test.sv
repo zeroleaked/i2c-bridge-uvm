@@ -12,6 +12,14 @@ class i2c_master_base_test extends uvm_test;
         env = i2c_master_env::type_id::create("env", this);
     endfunction
     
+    function void end_of_elaboration_phase(uvm_phase phase);
+        super.end_of_elaboration_phase(phase);
+        
+        // responder initial values
+        env.i2c_resp.set_memory(7'h50, 8'hAA);  // example: set address 0x50 to value 0xaa
+        env.i2c_resp.my_address = 7'h50;        // set responder's i2c address
+    endfunction
+
     task run_phase(uvm_phase phase);
         i2c_config_seq config_seq;
         

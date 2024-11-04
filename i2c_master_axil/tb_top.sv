@@ -61,6 +61,7 @@ module tb_top;
 
 	initial begin
 		uvm_config_db#(virtual i2c_if)::set(null, "uvm_test_top.env.i2c_mon", "vif", i2c_vif);
+    uvm_config_db#(virtual i2c_if)::set(null, "uvm_test_top.env.i2c_resp", "vif", i2c_vif); 
 		uvm_config_db#(virtual axil_if)::set(null, "uvm_test_top.env.axil_drv", "vif", axil_vif);
 		uvm_config_db#(virtual axil_if)::set(null, "uvm_test_top.env.axil_mon", "vif", axil_vif);
 

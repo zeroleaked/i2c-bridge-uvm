@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Mon Nov  4 19:23:25 2024
-# Process ID: 230644
+# Start of session at: Mon Nov  4 22:05:19 2024
+# Process ID: 251874
 # Current directory: /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil
 # Command line: xsim -mode tcl -source {xsim.dir/tb_top/xsim_script.tcl}
 # Log file: /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/xsim.log
@@ -19,7 +19,7 @@
 # Host memory       :33575 MB
 # Swap memory       :21474 MB
 # Total Virtual     :55050 MB
-# Available Virtual :43169 MB
+# Available Virtual :42945 MB
 #-----------------------------------------------------------
 source xsim.dir/tb_top/xsim_script.tcl
 run -all
