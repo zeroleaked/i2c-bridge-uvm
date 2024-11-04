@@ -15,9 +15,17 @@ class i2c_write_read_seq extends uvm_sequence #(axil_seq_item);
         req = axil_seq_item::type_id::create("req");
         start_item(req);
         req.addr = i2c_reg_map::CMD_REG;
-        req.data = {16'h0, slave_addr, 1'b0, data_to_write};
+        req.data = {21'h0, 1'b1, 1'b0, 1'b1, 1'b0, slave_addr};  // START + WRITE + STOP
         req.read = 0;
-        req.strb = 4'hF;
+        req.strb = 4'b0011;
+        `uvm_info("SEQ", $sformatf("Sending I2C write command: addr=%h data=%h", slave_addr, data_to_write), UVM_LOW)
+        finish_item(req);
+
+        start_item(req);
+        req.addr = i2c_reg_map::DATA_REG;
+        req.data = {22'h0, 1'b1, 1'b1, data_to_write};
+        req.read = 0;
+        req.strb = 4'b0011;
         `uvm_info("SEQ", $sformatf("Sending I2C write command: addr=%h data=%h", slave_addr, data_to_write), UVM_LOW)
         finish_item(req);
         

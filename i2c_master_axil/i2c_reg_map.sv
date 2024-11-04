@@ -1,9 +1,9 @@
 class i2c_reg_map;
     typedef enum bit [3:0] {
-        CTRL_REG     = 4'h0,
-        STATUS_REG   = 4'h1,
-        PRESCALE_REG = 4'h2,
-        CMD_REG      = 4'h3
+        STATUS_REG   = 4'h0,
+        CMD_REG      = 4'h4,
+        DATA_REG     = 4'h8,
+        PRESCALE_REG = 4'hc
     } reg_addr_t;
 
     typedef struct packed {

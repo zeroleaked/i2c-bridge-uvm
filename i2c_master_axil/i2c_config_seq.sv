@@ -15,13 +15,5 @@ class i2c_config_seq extends uvm_sequence #(axil_seq_item);
         req.read = 0;
         req.strb = 4'hF;
         finish_item(req);
-
-        req = axil_seq_item::type_id::create("req");
-        start_item(req);
-        req.addr = i2c_reg_map::CTRL_REG;
-        req.data = 32'h1; // Enable bit
-        req.read = 0;
-        req.strb = 4'hF;
-        finish_item(req);
     endtask
 endclass
