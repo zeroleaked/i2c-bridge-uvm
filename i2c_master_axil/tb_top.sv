@@ -1,7 +1,7 @@
 module tb_top;
 	import uvm_pkg::*;
     import dut_params_pkg::*;
-	import i2c_master_axil_pkg::*;
+	import axil_test_pkg::*;
     
     reg clk;
     reg rst;

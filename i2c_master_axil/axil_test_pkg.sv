@@ -1,7 +1,7 @@
-`ifndef I2C_MASTER_AXIL_PKG
-`define I2C_MASTER_AXIL_PKG
+`ifndef AXIL_TEST_PKG
+`define AXIL_TEST_PKG
 
-package i2c_master_axil_pkg;
+package axil_test_pkg;
    
    import uvm_pkg::*;
    `include "uvm_macros.svh"
@@ -10,11 +10,16 @@ package i2c_master_axil_pkg;
    // importing packages : agent,ref model, register ...
    /////////////////////////////////////////////////////////
 	import dut_params_pkg::*;
+	import axil_seq_list::*;
+	import axil_env_pkg::*;
    //////////////////////////////////////////////////////////
    // include top env files 
    /////////////////////////////////////////////////////////
-  `include "i2c_reg_map.sv"
+  `include "i2c_write_read_seq.sv"
+  `include "i2c_config_seq.sv"
 
+  `include "i2c_master_base_test.sv"
+  `include "i2c_master_test.sv"
 endpackage
 
 `endif

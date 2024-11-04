@@ -18,7 +18,10 @@ class axil_driver extends uvm_driver #(axil_seq_item);
         forever begin
             seq_item_port.get_next_item(req);
             drive_transaction(req);
+			$cast(rsp,req.clone());
+			rsp.set_id_info(req);
             seq_item_port.item_done();
+			seq_item_port.put(rsp);
         end
     endtask
 
