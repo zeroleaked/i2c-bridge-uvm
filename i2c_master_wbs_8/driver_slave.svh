@@ -106,7 +106,7 @@ class read_driver_slave extends uvm_driver#(read_sequence_item);
             this.stop = 0;                              // stop bit variable
             this.ack = 0;                               // ack/nack variable
             this.data = 0;                              // data packet (8 bits)
-            this.packet = 0;                            // ack/nack variable (redundant, remove later)
+            this.packet = PACKET_ACK;                            // ack/nack variable (redundant, remove later)
             this.flip = (resp_state == RESP_READ);      // master/slave operation based on the state
             this.top_vinterface.resp_sda_o = 1 ^ flip;
 
