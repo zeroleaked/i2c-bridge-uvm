@@ -4,7 +4,7 @@ class i2c_write_read_seq extends uvm_sequence #(axil_seq_item);
     function new(string name = "i2c_write_read_seq");
         super.new(name);
     endfunction
-
+0101 0000
     task body();
         axil_seq_item req;
         bit [6:0] slave_addr = 7'h50;
@@ -15,7 +15,7 @@ class i2c_write_read_seq extends uvm_sequence #(axil_seq_item);
         
         `uvm_info("SEQ", "Starting I2C write/read sequence", UVM_LOW)
 
-		api_rw_seq.write_register_command(slave_addr);
+		api_rw_seq.write_register_command(slave_addr, 1);
 		api_rw_seq.write_register_data(data_to_write);
         `uvm_info("SEQ", $sformatf("Sending I2C write command: addr=%h data=%h", slave_addr, data_to_write), UVM_LOW)
         
@@ -26,22 +26,12 @@ class i2c_write_read_seq extends uvm_sequence #(axil_seq_item);
         
         #5000;
         
-        req = axil_seq_item::type_id::create("req");
-        start_item(req);
-        req.addr = i2c_reg_map::CMD_REG;
-        req.data = {16'h0, slave_addr, 1'b1, 8'h0}; // Read command
-        req.read = 0;
-        req.strb = 4'hF;
+		api_rw_seq.write_register_command(slave_addr, 0);
         `uvm_info("SEQ", $sformatf("Sending I2C read command: addr=%h", slave_addr), UVM_LOW)
-        finish_item(req);
         
         do begin
-            req = axil_seq_item::type_id::create("req");
-            start_item(req);
-            req.addr = i2c_reg_map::STATUS_REG;
-            req.read = 1;
-            finish_item(req);
-            `uvm_info("SEQ", $sformatf("Status after read: %h", req.data), UVM_LOW)
-        end while (req.data[2]);
+			api_rw_seq.read_register_status();
+            `uvm_info("SEQ", $sformatf("Status after read: %h", api_rw_seq.rsp.data), UVM_LOW)
+        end while (api_rw_seq.rsp.data[2]);
     endtask
 endclass

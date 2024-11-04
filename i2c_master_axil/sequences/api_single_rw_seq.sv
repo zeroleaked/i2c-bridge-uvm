@@ -37,12 +37,11 @@ class api_single_rw_seq extends uvm_sequence #(axil_seq_item);
 		start(sequencer);
 	endtask
 
-	task write_register_command(input bit [6:0] addr);
+	task write_register_command(input bit [6:0] addr, input bit is_write);
 		bit cmd_stop = 1;
 		bit cmd_wr_m = 0;
-		bit cmd_write = 1;
 		bit cmd_start = 1;
-		bit [12:0] data = {cmd_stop, cmd_wr_m, cmd_write, !cmd_write,
+		bit [12:0] data = {cmd_stop, cmd_wr_m, is_write, !is_write,
 			cmd_start, 1'b0, addr};
 		start_write(i2c_reg_map::CMD_REG, {19'h0, data});
 	endtask
