@@ -65,11 +65,11 @@ class i2c_responder extends uvm_component;
                 is_read = addr_byte[0];
                 send_ack();
                 
-                if(is_read) begin
-                    data_byte = memory[addr_byte[7:1]];
-                    send_byte(data_byte);
-                    `uvm_info("I2C_RESP", $sformatf("Sending data: %h", data_byte), UVM_LOW)
-                end else begin
+                // if(is_read) begin
+                //     data_byte = memory[addr_byte[7:1]];
+                //     send_byte(data_byte);
+                //     `uvm_info("I2C_RESP", $sformatf("Sending data: %h", data_byte), UVM_LOW)
+
                   // null / register dest
                     receive_byte(data_byte);
                     send_ack();
@@ -77,7 +77,6 @@ class i2c_responder extends uvm_component;
                     memory[addr_byte[7:1]] = data_byte;
                     send_ack();
                     `uvm_info("I2C_RESP", $sformatf("Received data: %h", data_byte), UVM_LOW)
-                end
             end
         end
     endtask
