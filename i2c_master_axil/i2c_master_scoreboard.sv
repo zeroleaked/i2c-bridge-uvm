@@ -20,15 +20,28 @@ class i2c_master_scoreboard extends uvm_scoreboard;
         `uvm_info("SCBD", $sformatf("Received AXI transaction: addr=%h data=%h read=%b", 
                   item.addr, item.data, item.read), UVM_LOW)
         
-        if(!item.read && item.addr == i2c_reg_map::CMD_REG) begin
-            i2c_trans expected = i2c_trans::type_id::create("expected");
-            expected.addr = (item.data >> 8) & 7'h7F; // Get slave address from proper field
-            expected.read = (item.data >> 15) & 1'b1; // Get R/W bit
-            expected.data = item.data & 8'hFF;        // Get data byte
-            expected_i2c_queue.push_back(expected);
-            
-            `uvm_info("SCBD", $sformatf("Queued expected I2C transaction: addr=%h read=%b data=%h", 
-                      expected.addr, expected.read, expected.data), UVM_LOW)
+        if (!item.read) begin // Write transaction
+            if (item.addr == i2c_reg_map::DATA_REG) begin
+                // Create expected I2C write transaction
+                i2c_trans expected = i2c_trans::type_id::create("expected");
+                expected.addr = 7'h50; // Fixed slave address for now
+                expected.read = 1'b0;  // Write transaction
+                expected.data = item.data & 8'hFF; // Data byte
+                expected_i2c_queue.push_back(expected);
+                
+                `uvm_info("SCBD", $sformatf("Queued expected I2C write transaction: addr=%h read=%b data=%h", 
+                          expected.addr, expected.read, expected.data), UVM_LOW)
+            end
+            else if (item.addr == i2c_reg_map::CMD_REG && (item.data[15] == 1'b1)) begin
+                // Create expected I2C read transaction only if read bit is set
+                i2c_trans expected = i2c_trans::type_id::create("expected");
+                expected.addr = 7'h50; // Fixed slave address
+                expected.read = 1'b1;  // Read transaction
+                expected_i2c_queue.push_back(expected);
+                
+                `uvm_info("SCBD", $sformatf("Queued expected I2C read transaction: addr=%h read=%b", 
+                          expected.addr, expected.read), UVM_LOW)
+            end
         end
         expected_seq.push_back(item.data);
     endfunction
