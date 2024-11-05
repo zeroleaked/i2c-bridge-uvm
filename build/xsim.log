@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Mon Nov  4 23:37:22 2024
-# Process ID: 267936
+# Start of session at: Tue Nov  5 11:45:40 2024
+# Process ID: 27672
 # Current directory: /home/flyinglobster/i2c-bridge-uvm/build
 # Command line: xsim -mode tcl -source {xsim.dir/tb_top/xsim_script.tcl}
 # Log file: /home/flyinglobster/i2c-bridge-uvm/build/xsim.log
@@ -18,8 +18,8 @@
 # CPU Logical cores :12
 # Host memory       :33575 MB
 # Swap memory       :21474 MB
-# Total Virtual     :55050 MB
-# Available Virtual :42304 MB
+# Total Virtual     :55049 MB
+# Available Virtual :42634 MB
 #-----------------------------------------------------------
 source xsim.dir/tb_top/xsim_script.tcl
 # xsim {tb_top} -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
@@ -51,241 +51,333 @@ UVM_INFO /media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_test.sv(15) @ 0: uvm_test_top [TEST] Starting config sequence
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(74) @ 0: uvm_test_top.env.i2c_mon [I2C_MON] Waiting for I2C transaction...
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_test.sv(23) @ 1125000: uvm_test_top [TEST] Starting write/read sequence
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(16) @ 1125000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Starting I2C write/read sequence
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(41) @ 1165000: uvm_test_top.env.axil_mon [AXIL_MON] Collected write transaction: addr=c data=00001550
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=c data=00001550 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(17) @ 1125000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Starting I2C write/read sequence
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(41) @ 1165000: uvm_test_top.env.axil_mon [AXIL_MON] Collected write transaction: addr=c data=00000950
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=c data=00000950 read=0
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 1185000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(37) @ 1195000: uvm_test_top.env.i2c_mon [I2C_MON] START condition detected at time 1195000
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(20) @ 1205000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Sending I2C write command: addr=50 data=a5
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1245000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004101
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1285000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1285000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1285000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1285000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1325000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1325000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 1350000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1365000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(41) @ 1245000: uvm_test_top.env.axil_mon [AXIL_MON] Collected write transaction: addr=8 data=000002a5
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1245000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=8 data=000002a5 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1245000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(24) @ 1285000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Sending I2C write command: addr=50 data=a5
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1325000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1365000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1365000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1405000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1405000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1365000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1405000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1405000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1405000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1405000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1445000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1445000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1405000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1445000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1445000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1445000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1445000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1485000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1485000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1445000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1485000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1485000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1485000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1485000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1525000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1525000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 1525000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1485000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1525000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1525000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1525000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1525000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1565000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1565000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1525000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1565000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1565000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1565000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1565000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1605000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1605000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1565000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1605000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1605000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1605000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1605000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1645000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1645000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1605000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1645000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1645000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1645000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1645000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 1650000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1685000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1645000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1685000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1685000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1725000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1725000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1685000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1725000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1725000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1725000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1725000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1765000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1765000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1725000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1765000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1765000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1765000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1765000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1805000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1805000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1765000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1805000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1805000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1805000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1805000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 1810000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1845000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1845000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1805000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1845000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1845000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1845000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1845000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1885000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1885000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1845000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1885000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1885000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1885000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1885000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1925000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1925000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1885000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1925000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1925000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1925000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1925000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(90) @ 1935000: uvm_test_top.env.i2c_mon [I2C_MON] Address byte=0x50, ACK=0 at time 1935000
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1965000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1965000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1925000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 1965000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1965000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1965000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 1965000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2005000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2005000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 1965000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2005000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2005000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2005000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2005000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2045000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2045000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2005000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2045000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2045000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2045000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2045000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2085000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2085000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004103 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2045000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2085000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2085000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2085000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2085000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004103
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2125000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2125000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2085000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2125000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2125000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2125000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2125000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2165000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2125000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2165000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2165000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 2185000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2205000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2205000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2165000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2205000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2205000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2205000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2205000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2245000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2245000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2205000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2245000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2245000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2245000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2245000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2285000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2285000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2245000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2285000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2285000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2285000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2285000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2325000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2285000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2325000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2325000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2365000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 2365000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2325000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2365000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2365000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2405000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2405000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2365000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2405000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2405000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2405000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2405000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2445000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2445000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2405000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2445000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2445000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2445000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2445000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2485000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2485000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2445000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2485000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2485000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2485000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2485000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 2490000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2525000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2525000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2485000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2525000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2525000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2525000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2525000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2565000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2565000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2525000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2565000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2565000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2565000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2565000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2605000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2605000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2565000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2605000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2605000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2605000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2605000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2645000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2645000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2605000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2645000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2645000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2645000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2645000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 2650000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2685000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2645000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2685000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2685000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2725000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2725000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2685000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2725000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2725000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2725000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2725000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2765000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2765000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2725000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2765000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2765000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2765000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2765000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(121) @ 2775000: uvm_test_top.env.i2c_mon [I2C_MON] Write data=0xd2, ACK=1 at time 2775000
-UVM_ERROR /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(64) @ 2775000: uvm_test_top.env.scbd [SCBD] Unexpected I2C transaction received: addr=28 read=0 data=d2
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(74) @ 2775000: uvm_test_top.env.i2c_mon [I2C_MON] Waiting for I2C transaction...
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2805000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2805000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2765000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2805000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2805000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2805000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2805000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2845000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2845000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2805000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2845000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2845000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2845000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2845000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2885000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2885000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2845000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2885000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2885000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2885000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2885000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 2915000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2925000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2925000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2885000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2925000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2925000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2925000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2925000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2965000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2965000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2925000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 2965000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2965000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 2965000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 2965000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3005000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004900
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3005000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004900 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 2965000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3005000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3005000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3005000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(24) @ 3005000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004900
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(30) @ 8045000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Sending I2C read command: addr=50
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 8065000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(37) @ 8075000: uvm_test_top.env.i2c_mon [I2C_MON] START condition detected at time 8075000
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 8085000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004800
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 8085000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004800 read=1
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 8085000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_write_read_seq.sv(34) @ 8085000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status after read: 00004800
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 8230000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 8405000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 8530000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 8690000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(90) @ 8815000: uvm_test_top.env.i2c_mon [I2C_MON] Address byte=0x50, ACK=1 at time 8815000
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(74) @ 8815000: uvm_test_top.env.i2c_mon [I2C_MON] Waiting for I2C transaction...
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 9855000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
-UVM_INFO /media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 18085000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(38) @ 18085000: uvm_test_top.env.scbd [SCBD] Total AXI transactions: 92
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(40) @ 18085000: uvm_test_top.env.scbd [SCBD] Remaining expected I2C transactions: 0
-UVM_INFO /media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 18085000: reporter [UVM/REPORT/SERVER] 
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3005000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3045000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3045000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3045000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3045000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3085000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3085000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004003 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3085000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3085000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004003
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3125000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3125000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3125000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3125000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3165000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3165000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3205000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3205000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3205000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3205000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3245000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3245000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3245000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3245000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3285000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3285000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3285000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3285000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3325000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3325000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3365000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3365000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3405000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3405000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3405000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3405000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3445000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3445000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3445000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3445000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3485000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3485000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3485000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3485000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3525000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3525000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3525000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3525000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3565000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3565000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3565000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3565000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3605000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3605000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3605000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3605000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3645000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3645000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3645000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3645000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3685000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3685000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3725000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3725000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3725000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3725000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3765000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3765000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3765000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3765000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3805000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3805000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3805000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3805000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3845000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3845000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3845000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3845000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3885000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3885000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3885000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3885000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3925000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3925000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3925000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3925000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3965000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3965000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3965000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 3965000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 4005000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 4005000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 4005000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 4005000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 4045000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 4045000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004803 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 4045000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 4045000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004803
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 4085000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 4085000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 4085000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 4085000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 4125000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004903
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 4125000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004903 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 4125000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 4125000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004903
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 4165000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004900
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 4165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004900 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 4165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(28) @ 4165000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Status register: 00004900
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(41) @ 9245000: uvm_test_top.env.axil_mon [AXIL_MON] Collected write transaction: addr=4 data=00000000
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 9245000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=4 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(31) @ 9245000: uvm_test_top.env.scbd [SCBD] Queued expected I2C transaction: addr=00 read=0 data=00
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 9245000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(38) @ 9285000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Sending I2C read command: addr=50
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 9325000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=8 data=00000000
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 9325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=8 data=00000000 read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 9325000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(45) @ 10425000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Timeout waiting for a read
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(50) @ 10425000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Data register after read: 00000000
+UVM_INFO /media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 20425000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(38) @ 20425000: uvm_test_top.env.scbd [SCBD] Total AXI transactions: 150
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(40) @ 20425000: uvm_test_top.env.scbd [SCBD] Remaining expected I2C transactions: 1
+UVM_ERROR /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(45) @ 20425000: uvm_test_top.env.scbd [SCBD] Missing I2C transaction: addr=00 read=0 data=00
+UVM_INFO /media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 20425000: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :  220
+UVM_INFO :  313
 UVM_WARNING :    0
 UVM_ERROR :    1
 UVM_FATAL :    0
 ** Report counts by id
-[AXIL_MON]    46
+[AXIL_MON]    75
 [ENV]     1
-[I2C_MON]     8
-[I2C_RESP]    16
+[I2C_MON]     1
 [RNTST]     1
-[SCBD]    95
-[SEQ]    49
+[SCBD]   154
+[SEQ]    77
 [TEST]     2
 [TEST_DONE]     1
 [UVM/COMP/NAMECHECK]     1
 [UVM/RELNOTES]     1
 
-$finish called at time : 18085 ns : File "/media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+$finish called at time : 20425 ns : File "/media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
 exit
-INFO: [Common 17-206] Exiting xsim at Mon Nov  4 23:37:25 2024...
+INFO: [Common 17-206] Exiting xsim at Tue Nov  5 11:46:10 2024...
