@@ -21,17 +21,44 @@ module tb_top;
     i2c_if  i2c_vif(clk, rst);
     axil_if axil_vif(clk, rst);
 
-	// copied this from the documentation
-	assign scl_dut_i = scl_dut_o & scl_tb_o;
-	assign scl_tb_i = scl_dut_o & scl_tb_o;
-	assign sda_dut_i = sda_dut_o & sda_tb_o;
-	assign sda_tb_i = sda_dut_o & sda_tb_o;
+    // Declare wires
+    wire scl_dut_i, scl_dut_o, scl_tb_i, scl_tb_o;
+    wire sda_dut_i, sda_dut_o, sda_tb_i, sda_tb_o;
 
-	// vif is still using the perspective of DUT, so everything is the opposite (see interface modport)
-	assign scl_tb_o = i2c_vif.scl_i; 
-	assign sda_tb_o = i2c_vif.sda_i;
-	assign i2c_vif.scl_o = scl_tb_i;
-	assign i2c_vif.sda_o = sda_tb_i;
+    // Add pull-ups
+    pullup(scl_dut_i);
+    pullup(scl_tb_i);
+    pullup(sda_dut_i);
+    pullup(sda_tb_i);
+
+    // I2C bus modeling
+    wire scl_bus;
+    wire sda_bus;
+
+    assign scl_bus = scl_dut_o & scl_tb_o;
+    assign sda_bus = sda_dut_o & sda_tb_o;
+
+    assign scl_dut_i = scl_bus;
+    assign scl_tb_i = scl_bus;
+    assign sda_dut_i = sda_bus;
+    assign sda_tb_i = sda_bus;
+
+    // Interface connections
+    assign scl_tb_o = i2c_vif.scl_i;
+    assign sda_tb_o = i2c_vif.sda_i;
+    assign i2c_vif.scl_o = scl_tb_i;
+    assign i2c_vif.sda_o = sda_tb_i;
+	// // copied this from the documentation
+	// assign scl_dut_i = scl_dut_o & scl_tb_o;
+	// assign scl_tb_i = scl_dut_o & scl_tb_o;
+	// assign sda_dut_i = sda_dut_o & sda_tb_o;
+	// assign sda_tb_i = sda_dut_o & sda_tb_o;
+	//
+	// // vif is still using the perspective of DUT, so everything is the opposite (see interface modport)
+	// assign scl_tb_o = i2c_vif.scl_i; 
+	// assign sda_tb_o = i2c_vif.sda_i;
+	// assign i2c_vif.scl_o = scl_tb_i;
+	// assign i2c_vif.sda_o = sda_tb_i;
 
     i2c_master_axil #(
         .DEFAULT_PRESCALE(DEFAULT_PRESCALE),

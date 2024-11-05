@@ -31,19 +31,19 @@ class i2c_responder extends uvm_component;
     
     task send_ack();
         @(posedge vif.scl_o);
-        vif.sda_i <= 0;  
+        vif.sda_i <= 0;  // ACK
         @(negedge vif.scl_o);
-        vif.sda_i <= 1;  
+        vif.sda_i <= 1;  // Return to high
     endtask
-    
+
     task send_byte(bit [7:0] data);
         for(int i = 7; i >= 0; i--) begin
-            @(negedge vif.scl_o);  
+            @(negedge vif.scl_o);
             vif.sda_i <= data[i];
-            @(posedge vif.scl_o);  
+            @(posedge vif.scl_o);
         end
         @(negedge vif.scl_o);
-        vif.sda_i <= 1;  
+        vif.sda_i <= 1;  // Return to high
     endtask
 
     task run_phase(uvm_phase phase);
@@ -52,6 +52,7 @@ class i2c_responder extends uvm_component;
         bit is_read;
         
         vif.sda_i <= 1;  
+        vif.scl_i <= 1;  
         
         forever begin
             monitor_start_condition();

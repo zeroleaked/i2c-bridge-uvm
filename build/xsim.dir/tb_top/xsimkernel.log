@@ -1,4 +1,4 @@
-Running: xsim.dir/tb_top/xsimk -runall -simmode gui -testplusarg UVM_VERBOSITY=UVM_LOW -wdb tb_top.wdb -simrunnum 0 -socket 53387
+Running: xsim.dir/tb_top/xsimk -runall -simmode gui -testplusarg UVM_VERBOSITY=UVM_LOW -wdb tb_top.wdb -simrunnum 0 -socket 34837
 Design successfully loaded
 Design Loading Memory Usage: 34028 KB (Peak: 34036 KB)
 Design Loading CPU Usage: 10 ms

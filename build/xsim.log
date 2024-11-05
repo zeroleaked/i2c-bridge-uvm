@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Tue Nov  5 15:37:01 2024
-# Process ID: 39924
+# Start of session at: Tue Nov  5 15:48:58 2024
+# Process ID: 43220
 # Current directory: /home/flyinglobster/i2c-bridge-uvm/build
 # Command line: xsim -mode tcl -source {xsim.dir/tb_top/xsim_script.tcl}
 # Log file: /home/flyinglobster/i2c-bridge-uvm/build/xsim.log
@@ -13,13 +13,13 @@
 # Platform          :Pop
 # Operating System  :Pop!_OS 22.04 LTS
 # Processor Detail  :AMD Ryzen 5 3600 6-Core Processor
-# CPU Frequency     :4042.083 MHz
+# CPU Frequency     :2200.000 MHz
 # CPU Physical cores:6
 # CPU Logical cores :12
 # Host memory       :33575 MB
 # Swap memory       :21474 MB
 # Total Virtual     :55050 MB
-# Available Virtual :45017 MB
+# Available Virtual :45921 MB
 #-----------------------------------------------------------
 source xsim.dir/tb_top/xsim_script.tcl
 # xsim {tb_top} -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
@@ -55,52 +55,72 @@ UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(41) @ 1165000: uvm_test_top.env.axil_mon [AXIL_MON] Collected write transaction: addr=c data=00000950
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=c data=00000950 read=0
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1165000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 1185000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(37) @ 1195000: uvm_test_top.env.i2c_mon [I2C_MON] START condition detected at time 1195000
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(41) @ 1245000: uvm_test_top.env.axil_mon [AXIL_MON] Collected write transaction: addr=8 data=000002a5
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1245000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=8 data=000002a5 read=0
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 1245000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(27) @ 1285000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Sending I2C write command: addr=50 data=a5
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3365000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=0000480b
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=0000480b read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(90) @ 2015000: uvm_test_top.env.i2c_mon [I2C_MON] Address byte=0x50, ACK=0 at time 2015000
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(121) @ 2945000: uvm_test_top.env.i2c_mon [I2C_MON] Write data=0x80, ACK=0 at time 2945000
+UVM_ERROR /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(64) @ 2945000: uvm_test_top.env.scbd [SCBD] Unexpected I2C transaction received: addr=28 read=0 data=80
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(74) @ 2945000: uvm_test_top.env.i2c_mon [I2C_MON] Waiting for I2C transaction...
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(74) @ 3045000: uvm_test_top.env.i2c_resp [I2C_RESP] Received data: 00
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 3365000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004807
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004807 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 3365000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 4405000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=0 data=00004908
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 4405000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00004908 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 4405000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 9465000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(37) @ 9475000: uvm_test_top.env.i2c_mon [I2C_MON] START condition detected at time 9475000
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(41) @ 9485000: uvm_test_top.env.axil_mon [AXIL_MON] Collected write transaction: addr=4 data=00000000
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 9485000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=4 data=00000000 read=0
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(31) @ 9485000: uvm_test_top.env.scbd [SCBD] Queued expected I2C transaction: addr=00 read=0 data=00
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 9485000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(47) @ 9525000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Sending I2C read command: addr=50
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(90) @ 10295000: uvm_test_top.env.i2c_mon [I2C_MON] Address byte=0x50, ACK=0 at time 10295000
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 10565000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=8 data=00000000
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 10565000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=8 data=00000000 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 10565000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(121) @ 11225000: uvm_test_top.env.i2c_mon [I2C_MON] Write data=0x80, ACK=0 at time 11225000
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(54) @ 11225000: uvm_test_top.env.scbd [SCBD] Comparing I2C transaction - Expected: addr=00 read=0 data=00, Got: addr=28 read=0 data=80
+UVM_ERROR /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(58) @ 11225000: uvm_test_top.env.scbd [SCBD] I2C Mismatch! Expected: addr=00 read=0 data=00, Got: addr=28 read=0 data=80
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(74) @ 11225000: uvm_test_top.env.i2c_mon [I2C_MON] Waiting for I2C transaction...
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(74) @ 11325000: uvm_test_top.env.i2c_resp [I2C_RESP] Received data: 00
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(21) @ 11435000: uvm_test_top.env.i2c_resp [I2C_RESP] START condition detected
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(37) @ 11445000: uvm_test_top.env.i2c_mon [I2C_MON] START condition detected at time 11445000
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 11605000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=8 data=00000000
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 11605000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=8 data=00000000 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 11605000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(90) @ 12265000: uvm_test_top.env.i2c_mon [I2C_MON] Address byte=0x50, ACK=1 at time 12265000
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_monitor.sv(74) @ 12265000: uvm_test_top.env.i2c_mon [I2C_MON] Waiting for I2C transaction...
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 12645000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=8 data=00000000
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 12645000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=8 data=00000000 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 12645000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 13685000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=8 data=000003ff
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 13685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=8 data=000003ff read=1
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_responder.sv(69) @ 13355000: uvm_test_top.env.i2c_resp [I2C_RESP] Sending data: 00
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/axil_monitor.sv(55) @ 13685000: uvm_test_top.env.axil_mon [AXIL_MON] Collected read transaction: addr=8 data=00000380
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 13685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=8 data=00000380 read=1
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(21) @ 13685000: uvm_test_top.env.scbd [SCBD] Received AXI transaction: addr=0 data=00000000 read=0
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(60) @ 13685000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Read data: ff
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/sequences/write_read_seq.sv(60) @ 13685000: uvm_test_top.env.axil_seqr@@wr_seq [SEQ] Read data: 80
 UVM_INFO /media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 23685000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(38) @ 23685000: uvm_test_top.env.scbd [SCBD] Total AXI transactions: 18
-UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(40) @ 23685000: uvm_test_top.env.scbd [SCBD] Remaining expected I2C transactions: 1
-UVM_ERROR /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(45) @ 23685000: uvm_test_top.env.scbd [SCBD] Missing I2C transaction: addr=00 read=0 data=00
+UVM_INFO /home/flyinglobster/i2c-bridge-uvm/i2c_master_axil/i2c_master_scoreboard.sv(40) @ 23685000: uvm_test_top.env.scbd [SCBD] Remaining expected I2C transactions: 0
 UVM_INFO /media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 23685000: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   42
+UVM_INFO :   60
 UVM_WARNING :    0
-UVM_ERROR :    1
+UVM_ERROR :    2
 UVM_FATAL :    0
 ** Report counts by id
 [AXIL_MON]     9
 [ENV]     1
-[I2C_MON]     1
+[I2C_MON]    12
+[I2C_RESP]     6
 [RNTST]     1
-[SCBD]    22
+[SCBD]    24
 [SEQ]     4
 [TEST]     2
 [TEST_DONE]     1
@@ -109,4 +129,4 @@ UVM_FATAL :    0
 
 $finish called at time : 23685 ns : File "/media/flyinglobster/wd/vivado/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
 exit
-INFO: [Common 17-206] Exiting xsim at Tue Nov  5 15:37:04 2024...
+INFO: [Common 17-206] Exiting xsim at Tue Nov  5 15:49:00 2024...
