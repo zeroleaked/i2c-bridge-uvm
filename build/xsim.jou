@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Tue Nov  5 15:48:58 2024
-# Process ID: 43220
+# Start of session at: Tue Nov  5 17:55:40 2024
+# Process ID: 81710
 # Current directory: /home/flyinglobster/i2c-bridge-uvm/build
 # Command line: xsim -mode tcl -source {xsim.dir/tb_top/xsim_script.tcl}
 # Log file: /home/flyinglobster/i2c-bridge-uvm/build/xsim.log
@@ -13,13 +13,13 @@
 # Platform          :Pop
 # Operating System  :Pop!_OS 22.04 LTS
 # Processor Detail  :AMD Ryzen 5 3600 6-Core Processor
-# CPU Frequency     :2200.000 MHz
+# CPU Frequency     :2054.857 MHz
 # CPU Physical cores:6
 # CPU Logical cores :12
 # Host memory       :33575 MB
 # Swap memory       :21474 MB
 # Total Virtual     :55050 MB
-# Available Virtual :45921 MB
+# Available Virtual :40524 MB
 #-----------------------------------------------------------
 source xsim.dir/tb_top/xsim_script.tcl
 run -all
