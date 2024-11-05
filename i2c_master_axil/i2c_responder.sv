@@ -21,35 +21,13 @@ class i2c_responder extends uvm_component;
         `uvm_info("I2C_RESP", "START condition detected", UVM_LOW)
     endtask
     
-    task receive_byte(output bit [7:0] data, output bit is_repeat_start);
-		is_repeat_start = 0;
+    task receive_byte(output bit [7:0] data);
         for(int i = 7; i >= 0; i--) begin
             @(posedge vif.scl_o);  
             data[i] = vif.sda_o;
             `uvm_info("HAHAHAHAHA PER-NAME", $sformatf("[%t] bit %d = %d", $time, i, data[i]), UVM_NONE)
-
-			// look for repeat start
-			if ((i == 7) & vif.sda_o) begin
-				wait (!vif.scl_o | !vif.sda_o);
-				if (!vif.sda_o) begin
-            		`uvm_info(get_type_name(), "repeat start detected!", UVM_NONE);
-					is_repeat_start = 1;
-					break;
-				end
-			end
 			wait (!vif.scl_o);
         end
-
-		// same, but has been delayed one scl
-		if (is_repeat_start) begin
-			wait (!vif.scl_o);
-			for (int i = 7; i >= 0; i--) begin
-				wait (vif.scl_o);
-				data[i] = vif.sda_o;
-            	`uvm_info(get_type_name(), $sformatf("[%t] bit %d = %d", $time, i, data[i]), UVM_NONE)
-				wait (!vif.scl_o);
-			end
-		end
     endtask
     
     task send_ack();
@@ -76,7 +54,7 @@ class i2c_responder extends uvm_component;
         bit [7:0] addr_byte;
         bit [7:0] reg_byte;
         bit [7:0] data_byte;
-		bit is_repeat_start;
+		bit is_write;
         
         vif.sda_i <= 1;  
         vif.scl_i <= 1;  
@@ -84,17 +62,18 @@ class i2c_responder extends uvm_component;
         forever begin
             monitor_start_condition();
             
-            receive_byte(addr_byte, is_repeat_start);
+            receive_byte(addr_byte);
             
             if((addr_byte[7:1] == my_address)) begin
                 send_ack();
+				is_write = addr_byte[0];
 
-				receive_byte(reg_byte, is_repeat_start);
+				receive_byte(reg_byte);
 				send_ack();
 				
-				receive_byte(data_byte, is_repeat_start);
+				receive_byte(data_byte);
 
-				if (!is_repeat_start) begin // write operation
+				if (is_write) begin // write operation
 					memory[reg_byte] = data_byte;
 					send_ack();
 					`uvm_info("I2C_RESP", $sformatf("Received data: %h", data_byte), UVM_LOW)

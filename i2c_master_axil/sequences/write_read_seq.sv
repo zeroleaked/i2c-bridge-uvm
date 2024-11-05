@@ -8,57 +8,38 @@ class write_read_seq extends uvm_sequence #(axil_seq_item);
     task body();
         axil_seq_item req;
         bit [6:0] slave_addr = 7'h50;
+        bit [7:0] reg_addr = 8'h0;
         bit [7:0] data_to_write = 8'hA5;
-        api_single_rw_seq api_rw_seq = api_single_rw_seq::type_id::create("req");
-        bit [31:0] status;
-        int timeout_count = 0;
-        const int TIMEOUT_MAX = 1000; 
+		
+		memory_slave_seq mem_slave = memory_slave_seq::type_id::create("req");
+		api_single_rw_seq api_rw = api_single_rw_seq::type_id::create("req");
 
-        api_rw_seq.configure(m_sequencer);
-        
+		int timeout_count = 0;
+
         `uvm_info("SEQ", "Starting I2C write/read sequence", UVM_LOW)
-
-        // WRITE TO I2C SLAVE
-        api_rw_seq.write_register_command(slave_addr, CMD_START | CMD_WR_M);
-        api_rw_seq.write_register_data(8'h0, DATA_DEFAULT);
-        api_rw_seq.write_register_data(data_to_write, DATA_LAST);
-        api_rw_seq.write_register_command(7'h0, CMD_STOP);
-        `uvm_info("SEQ", $sformatf("Sending I2C write command: addr=%h data=%h", 
-                  slave_addr, data_to_write), UVM_LOW)
+        mem_slave.configure(m_sequencer, slave_addr);
+		api_rw.configure(m_sequencer);
+		
+		mem_slave.register_write(reg_addr, data_to_write); // WRITE TO I2C SLAVE
         
         do begin
-            #1000; 
-            api_rw_seq.read_register_status();
-            status = api_rw_seq.rsp.data;
-            timeout_count++;
-            if (timeout_count >= TIMEOUT_MAX) begin
-                `uvm_error("SEQ", "Timeout waiting for write to complete")
-                break;
-            end
-        end while (status[0]); 
+			api_rw.read_register_status();
+            `uvm_info("SEQ", $sformatf("Status register: %h", api_rw.rsp.data), UVM_LOW)
+        end while (api_rw.rsp.data[0]); // Wait until not busy
         
         #5000;
-        timeout_count = 0;
-
-        // READ FROM I2C SLAVE
-        api_rw_seq.write_register_command(slave_addr, CMD_START | CMD_WRITE);
-        api_rw_seq.write_register_data(8'h0, DATA_DEFAULT);
-        api_rw_seq.write_register_command(slave_addr, CMD_START | CMD_READ | CMD_STOP);
-        `uvm_info("SEQ", $sformatf("Sending I2C read command: addr=%h", slave_addr), UVM_LOW)
         
+		// READ TO I2C SLAVE
+		mem_slave.register_read(reg_addr);
         do begin
-            #1000;
-            api_rw_seq.read_register_data();
-            timeout_count++;
-            if (timeout_count >= TIMEOUT_MAX) begin
-                `uvm_info("SEQ", "Timeout waiting for read data", UVM_LOW)
-                break;
-            end
-        end while (!(api_rw_seq.rsp.data[9:8] & DATA_VALID));
+        	#100;
+			timeout_count++;
+			if (timeout_count > 10) begin
+        		`uvm_error("SEQ", "Timeout waiting for a read")
+				break;
+			end
+        end while (mem_slave.data[9:8] | DATA_VALID);
         
-        if (timeout_count < TIMEOUT_MAX) begin
-            `uvm_info("SEQ", $sformatf("Read data: %h", api_rw_seq.rsp.data[7:0]), UVM_LOW)
-        end
-
+		`uvm_info("SEQ", $sformatf("Data register after read: %h", mem_slave.data), UVM_LOW)
     endtask
 endclass
