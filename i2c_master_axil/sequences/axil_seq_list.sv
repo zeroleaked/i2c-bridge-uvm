@@ -15,7 +15,12 @@ package axil_seq_list;
    //////////////////////////////////////////////////////////
    // include top env files 
    /////////////////////////////////////////////////////////
-  `include "api_single_rw_seq.sv"
+	`include "axil_seq_defines.svh"
+
+	`include "api_single_rw_seq.sv"
+
+	`include "config_seq.sv"
+	`include "write_read_seq.sv"
 
 endpackage
 

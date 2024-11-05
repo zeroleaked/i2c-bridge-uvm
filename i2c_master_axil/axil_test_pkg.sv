@@ -15,9 +15,6 @@ package axil_test_pkg;
    //////////////////////////////////////////////////////////
    // include top env files 
    /////////////////////////////////////////////////////////
-  `include "i2c_write_read_seq.sv"
-  `include "i2c_config_seq.sv"
-
   `include "i2c_master_base_test.sv"
   `include "i2c_master_test.sv"
 endpackage

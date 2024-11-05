@@ -21,12 +21,12 @@ class i2c_master_base_test extends uvm_test;
     endfunction
 
     task run_phase(uvm_phase phase);
-        i2c_config_seq config_seq;
+        config_seq config_seq_i;
         
         phase.raise_objection(this);
 
-        config_seq = i2c_config_seq::type_id::create("config_seq");
-        config_seq.start(env.axil_seqr);
+        config_seq_i = config_seq::type_id::create("config_seq");
+        config_seq_i.start(env.axil_seqr);
         
         #1000;
         phase.drop_objection(this);

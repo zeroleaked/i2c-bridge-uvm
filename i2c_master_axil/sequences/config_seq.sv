@@ -1,7 +1,7 @@
-class i2c_config_seq extends uvm_sequence #(axil_seq_item);
-    `uvm_object_utils(i2c_config_seq)
+class config_seq extends uvm_sequence #(axil_seq_item);
+    `uvm_object_utils(config_seq)
 
-    function new(string name = "i2c_config_seq");
+    function new(string name = "config_seq");
         super.new(name);
     endfunction
 
