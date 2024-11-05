@@ -19,6 +19,8 @@ package axil_seq_list;
 
 	`include "api_single_rw_seq.sv"
 
+	`include "memory_slave_seq.sv"
+
 	`include "config_seq.sv"
 	`include "write_read_seq.sv"
 
