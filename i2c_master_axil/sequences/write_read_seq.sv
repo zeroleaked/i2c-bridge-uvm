@@ -27,19 +27,9 @@ class write_read_seq extends uvm_sequence #(axil_seq_item);
             `uvm_info("SEQ", $sformatf("Status register: %h", api_rw.rsp.data), UVM_LOW)
         end while (api_rw.rsp.data[0]); // Wait until not busy
         
-        #5000;
-        
 		// READ TO I2C SLAVE
 		mem_slave.register_read(reg_addr);
-        do begin
-        	#100;
-			timeout_count++;
-			if (timeout_count > 10) begin
-        		`uvm_error("SEQ", "Timeout waiting for a read")
-				break;
-			end
-        end while (mem_slave.data[9:8] | DATA_VALID);
         
-		`uvm_info("SEQ", $sformatf("Data register after read: %h", mem_slave.data), UVM_LOW)
+		`uvm_info("SEQ", $sformatf("Read data from I2C: %h", mem_slave.data), UVM_LOW)
     endtask
 endclass

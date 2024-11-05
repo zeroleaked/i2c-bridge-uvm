@@ -30,6 +30,27 @@ class i2c_responder extends uvm_component;
         end
     endtask
     
+    task receive_byte_with_stop(output bit [7:0] data, output bit is_stop);
+		is_stop = 0;
+        for(int i = 7; i >= 0; i--) begin
+            @(posedge vif.scl_o);  
+            data[i] = vif.sda_o;
+
+			// detect stop condition
+			if ((i == 7) & !vif.sda_o) begin
+				wait (!vif.scl_o | vif.sda_o);
+				if (vif.sda_o) begin
+					is_stop = 1;
+            		`uvm_info(get_type_name(), "stop bit detected", UVM_NONE)
+					break;
+				end
+			end
+
+            `uvm_info(get_type_name(), $sformatf("[%t] bit %d = %d", $time, i, data[i]), UVM_NONE)
+			wait (!vif.scl_o);
+        end
+    endtask
+    
     task send_ack();
 		repeat (6) @(vif.clk);
         vif.sda_i <= 0;  // ACK
@@ -40,13 +61,13 @@ class i2c_responder extends uvm_component;
     endtask
 
     task send_byte(bit [7:0] data);
+        `uvm_info("KENTUT", "send byte start", UVM_NONE)
         for(int i = 7; i >= 0; i--) begin
-            @(negedge vif.scl_o);
             vif.sda_i <= data[i];
             `uvm_info("KENTUT", $sformatf("[%t] bit %d = %d", $time, i, data[i]), UVM_NONE)
-            @(posedge vif.scl_o);
+            wait (vif.scl_o);
+            wait (!vif.scl_o);
         end
-        @(negedge vif.scl_o);
         vif.sda_i <= 1;  // Return to high
     endtask
 
@@ -55,6 +76,7 @@ class i2c_responder extends uvm_component;
         bit [7:0] reg_byte;
         bit [7:0] data_byte;
 		bit is_write;
+		bit is_stop;
         
         vif.sda_i <= 1;  
         vif.scl_i <= 1;  
@@ -66,20 +88,23 @@ class i2c_responder extends uvm_component;
             
             if((addr_byte[7:1] == my_address)) begin
                 send_ack();
-				is_write = addr_byte[0];
+				is_write = !addr_byte[0];
 
-				receive_byte(reg_byte);
-				send_ack();
-				
-				receive_byte(data_byte);
-
-				if (is_write) begin // write operation
-					memory[reg_byte] = data_byte;
+				if (is_write) begin
+					receive_byte(reg_byte);
 					send_ack();
-					`uvm_info("I2C_RESP", $sformatf("Received data: %h", data_byte), UVM_LOW)
+					
+					receive_byte_with_stop(data_byte, is_stop);
+
+					while (!is_stop) begin
+						memory[reg_byte] = data_byte;
+						send_ack();
+						`uvm_info("I2C_RESP", $sformatf("Received data: %h", data_byte), UVM_LOW)
+						reg_byte++;
+						receive_byte_with_stop(data_byte, is_stop);
+					end
 				end
-				else if ((data_byte[7:1] == my_address) & data_byte[0] == 1) begin // read operation
-					send_ack();
+				else begin
 					send_byte(memory[reg_byte]);
 					`uvm_info("I2C_RESP", $sformatf("Send data: %h", memory[reg_byte]), UVM_LOW)
 				end

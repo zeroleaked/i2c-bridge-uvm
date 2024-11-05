@@ -17,22 +17,28 @@ class memory_slave_seq extends uvm_sequence #(axil_seq_item);
 		api_rw_seq.configure(m_sequencer);
         
 		if (is_write) begin
-	        `uvm_info("SEQ", "Starting I2C write sequence", UVM_LOW)
+			`uvm_info("SEQ", $sformatf("Sending I2C write command: slave=%h reg=%h data=%h", slave_address, register_address, data), UVM_LOW)
+			
 			api_rw_seq.write_register_command(slave_address,
 				CMD_START | CMD_WR_M); // address and start
 			api_rw_seq.write_register_data(register_address, DATA_DEFAULT); // register 0
 			api_rw_seq.write_register_data(data, DATA_LAST); // for write_multiple
 			api_rw_seq.write_register_command(7'h0, CMD_STOP); // stop
-			`uvm_info("SEQ", $sformatf("Sending I2C write command: slave=%h reg=%h data=%h", slave_address, register_address, data), UVM_LOW)
 		end
 		else begin
-			api_rw_seq.write_register_command(slave_address, CMD_START | CMD_WRITE);
-			api_rw_seq.write_register_data(register_address, DATA_DEFAULT); // register 0
+			`uvm_info("SEQ", $sformatf("Sending I2C read command: slave=%h reg=%h", slave_address, register_address), UVM_LOW);
+
+			api_rw_seq.write_register_command(slave_address, CMD_START | CMD_WRITE | CMD_STOP);
+			api_rw_seq.write_register_data(register_address, DATA_LAST); // register 0
 			api_rw_seq.write_register_command(slave_address, CMD_START | CMD_READ | CMD_STOP);
-			api_rw_seq.read_register_data(); // register 0
+
+			repeat(10) begin
+				#1000
+				api_rw_seq.read_register_data(); // register 0
+				if (api_rw_seq.rsp.data[9:8] & DATA_VALID) break;
+			end
 			rsp = api_rw_seq.rsp;
-			data = rsp.data;
-			`uvm_info("SEQ", $sformatf("Sending I2C read command: slave=%h reg=%h", slave_address, register_address), UVM_LOW)
+			data = rsp.data[7:0];
 		end
     endtask
 
