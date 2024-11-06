@@ -25,7 +25,7 @@ class i2c_responder extends uvm_component;
         for(int i = 7; i >= 0; i--) begin
             @(posedge vif.scl_o);  
             data[i] = vif.sda_o;
-            `uvm_info("HAHAHAHAHA PER-NAME", $sformatf("[%t] bit %d = %d", $time, i, data[i]), UVM_NONE)
+            // `uvm_info("HAHAHAHAHA PER-NAME", $sformatf("[%t] bit %d = %d", $time, i, data[i]), UVM_NONE)
 			wait (!vif.scl_o);
         end
     endtask
@@ -46,7 +46,7 @@ class i2c_responder extends uvm_component;
 				end
 			end
 
-            `uvm_info(get_type_name(), $sformatf("[%t] bit %d = %d", $time, i, data[i]), UVM_NONE)
+            // `uvm_info(get_type_name(), $sformatf("[%t] bit %d = %d", $time, i, data[i]), UVM_NONE)
 			wait (!vif.scl_o);
         end
     endtask
@@ -61,10 +61,10 @@ class i2c_responder extends uvm_component;
     endtask
 
     task send_byte(bit [7:0] data);
-        `uvm_info("KENTUT", "send byte start", UVM_NONE)
+        // `uvm_info("KENTUT", "send byte start", UVM_NONE)
         for(int i = 7; i >= 0; i--) begin
             vif.sda_i <= data[i];
-            `uvm_info("KENTUT", $sformatf("[%t] bit %d = %d", $time, i, data[i]), UVM_NONE)
+            // `uvm_info("KENTUT", $sformatf("[%t] bit %d = %d", $time, i, data[i]), UVM_NONE)
             wait (vif.scl_o);
             wait (!vif.scl_o);
         end

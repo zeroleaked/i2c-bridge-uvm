@@ -24,7 +24,7 @@ class write_read_seq extends uvm_sequence #(axil_seq_item);
         
         do begin
 			api_rw.read_register_status();
-            `uvm_info("SEQ", $sformatf("Status register: %h", api_rw.rsp.data), UVM_LOW)
+            // `uvm_info("SEQ", $sformatf("Status register: %h", api_rw.rsp.data), UVM_LOW)
         end while (api_rw.rsp.data[0]); // Wait until not busy
         
 		// READ TO I2C SLAVE

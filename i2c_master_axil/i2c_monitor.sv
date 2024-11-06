@@ -24,7 +24,7 @@ class i2c_monitor extends uvm_monitor;
         for(int i = 7; i >= 0; i--) begin
             @(posedge vif.scl_o);  
             data[i] = vif.sda_o;
-            `uvm_info("I2C_MON", $sformatf("Bit[%0d]=%b at time %0t", i, data[i], $time), UVM_LOW)
+            // `uvm_info("I2C_MON", $sformatf("Bit[%0d]=%b at time %0t", i, data[i], $time), UVM_LOW)
             wait(!vif.scl_o);
         end
     endtask

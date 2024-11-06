@@ -37,8 +37,8 @@ task collect_transaction(axil_seq_item tr);
             
             @(vif.monitor_cb iff vif.monitor_cb.bvalid && vif.monitor_cb.bready);
             
-            `uvm_info("AXIL_MON", $sformatf("Collected write transaction: addr=%h data=%h", 
-                     tr.addr, tr.data), UVM_LOW)
+            // `uvm_info("AXIL_MON", $sformatf("Collected write transaction: addr=%h data=%h", 
+            //          tr.addr, tr.data), UVM_LOW)
             ap.write(tr);
         end
         
@@ -51,8 +51,8 @@ task collect_transaction(axil_seq_item tr);
             @(vif.monitor_cb iff vif.monitor_cb.rvalid && vif.monitor_cb.rready);
             tr.data = vif.monitor_cb.rdata;
             
-            `uvm_info("AXIL_MON", $sformatf("Collected read transaction: addr=%h data=%h", 
-                     tr.addr, tr.data), UVM_LOW)
+            // `uvm_info("AXIL_MON", $sformatf("Collected read transaction: addr=%h data=%h", 
+                     // tr.addr, tr.data), UVM_LOW)
             ap.write(tr);
         end
     join_any

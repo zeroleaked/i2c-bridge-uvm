@@ -17,8 +17,8 @@ class i2c_master_scoreboard extends uvm_scoreboard;
     endfunction
     
     function void write_axil(axil_seq_item item);
-        `uvm_info("SCBD", $sformatf("Received AXI transaction: addr=%h data=%h read=%b", 
-                  item.addr, item.data, item.read), UVM_LOW)
+        // `uvm_info("SCBD", $sformatf("Received AXI transaction: addr=%h data=%h read=%b", 
+                  // item.addr, item.data, item.read), UVM_LOW)
         
         if (!item.read) begin // Write transaction
             if (item.addr == i2c_reg_map::DATA_REG) begin
